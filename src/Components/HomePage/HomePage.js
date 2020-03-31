@@ -1,6 +1,7 @@
 import React from 'react';
 import GetMovieLists from '../../Services/getMovieLists';
 import Movie from '../Movie/Movie';
+import './HomePage.css';
 
 class HomePage extends React.Component{
   state = {

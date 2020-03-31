@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './Nav.css';
 
 class Nav extends React.Component{
   render(){

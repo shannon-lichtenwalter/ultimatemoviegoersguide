@@ -9,9 +9,9 @@ class Movie extends React.Component{
 
   render(){
     return(
-      <li onClick={()=> this.renderMovieDetails()}>
+      <li tabIndex='0' className='movieListItem' onClick={()=> this.renderMovieDetails()}>
         {this.props.data.poster_path 
-          ? <img src={`https://image.tmdb.org/t/p/w200/${this.props.data.poster_path}`} alt='movie poster'/>
+          ? <img className='posterImage' src={`https://image.tmdb.org/t/p/w200/${this.props.data.poster_path}`} alt='movie poster'/>
           : <div className='poster'>No Poster Data Available</div>
         }
         <h1>{this.props.data.title}</h1>

@@ -5,4 +5,18 @@
   display:flex;
   justify-content: center;
   align-items: center;
+  border-radius: 3px;
+}
+
+.posterImage {
+  border-radius: 5px;
+}
+
+.poster:hover, .posterImage:hover {
+  opacity: 0.6;
+  
+}
+
+.movieListItem:hover {
+  background-color: rgb(237, 235, 231, 0.6);
 }
