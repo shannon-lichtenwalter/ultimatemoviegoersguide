@@ -39,9 +39,11 @@ class HomePage extends React.Component{
           <option value='popular'>Popular</option>
           <option value='top_rated'>Top Rated</option>
         </select>
-        {this.state.data && this.state.data.results.map((movie, index) => {
-          return <Movie key={index} data={movie}/>
-        })}
+        <ul className='movies'>
+          {this.state.data && this.state.data.results.map((movie, index) => {
+            return <Movie key={index} data={movie} showDetails={this.props.showDetails}/>
+          })}
+        </ul>
       </section>
     )
   }

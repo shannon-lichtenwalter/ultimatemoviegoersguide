@@ -4,11 +4,14 @@ import Nav from './Components/Nav/Nav';
 import HomePage from './Components/HomePage/HomePage';
 import SearchPage from './Components/SearchPage/SearchPage';
 import AboutPage from './Components/AboutPage/AboutPage';
+import MovieDetails from './Components/MovieDetails/MovieDetails';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
+import './index.css';
 
 class App extends React.Component {
   state = {
-    error: null
+    error: null,
+    movieDetails: null
   }
 
   setError = (e) => {
@@ -23,6 +26,14 @@ class App extends React.Component {
       error: null
     })
   }
+
+  showDetails = (data) => {
+    this.setState({
+      movieDetails: data
+    }, this.props.history.push('/movie-details'))
+  }
+
+
   render() {
     return (
       <main className='App'>
@@ -38,6 +49,7 @@ class App extends React.Component {
               error={this.state.error}
               setError={this.setError}
               resetError={this.resetError}
+              showDetails={this.showDetails}
             />}
           />
 
@@ -47,6 +59,7 @@ class App extends React.Component {
             component={() => <SearchPage
               error={this.state.error}
               resetError={this.resetError}
+              showDetails={this.showDetails}
               />}
           />
 
@@ -54,6 +67,16 @@ class App extends React.Component {
             exact
             path={'/about'}
             component={() => <AboutPage
+              error={this.state.error}
+              resetError={this.resetError}
+              />}
+          />
+
+          <Route
+            exact
+            path={'/movie-details'}
+            component={() => <MovieDetails
+              movieDetails= {this.state.movieDetails}
               error={this.state.error}
               resetError={this.resetError}
               />}

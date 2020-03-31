@@ -1,0 +1,8 @@
+.poster {
+  height: 300px;
+  width: 200px;
+  background-color: lightgray;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
