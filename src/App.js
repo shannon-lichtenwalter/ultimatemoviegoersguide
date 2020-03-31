@@ -5,42 +5,46 @@ import HomePage from './Components/HomePage/HomePage';
 import SearchPage from './Components/SearchPage/SearchPage';
 import AboutPage from './Components/AboutPage/AboutPage';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
+import config from './config';
 
-function App() {
-  return (
-    <main className='App'>
-      <Nav />
-      <header>
-        <h1>Ultimate Moviegoers Guide</h1>
-      </header>
-      <Switch>
-            <Route
-              exact
-              path={'/'}
-              component={HomePage}
-            />
+class App extends React.Component {
+  render() {
+    console.log(config);
+    return (
+      <main className='App'>
+        <Nav />
+        <header>
+          <h1>Ultimate Moviegoers Guide</h1>
+        </header>
+        <Switch>
+          <Route
+            exact
+            path={'/'}
+            component={HomePage}
+          />
 
-            <Route
-              exact
-              path={'/search'}
-              component={SearchPage}
-            />
+          <Route
+            exact
+            path={'/search'}
+            component={SearchPage}
+          />
 
-            <Route
-              exact
-              path={'/about'}
-              component={AboutPage}
-            />
+          <Route
+            exact
+            path={'/about'}
+            component={AboutPage}
+          />
 
-            <Route
-              exact
-              path={'/error'}
-              component={ErrorPage}
-            />
-          </Switch>
+          <Route
+            exact
+            path={'/error'}
+            component={ErrorPage}
+          />
+        </Switch>
 
-    </main>
-  );
+      </main>
+    );
+  }
 }
 
 export default App;
