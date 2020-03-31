@@ -78,6 +78,8 @@ class App extends React.Component {
             component={() => <MovieDetails
               movieDetails= {this.state.movieDetails}
               error={this.state.error}
+              setError={this.setError}
+              showDetails={this.showDetails}
               resetError={this.resetError}
               />}
           />

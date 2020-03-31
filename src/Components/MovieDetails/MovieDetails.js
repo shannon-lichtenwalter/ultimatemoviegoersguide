@@ -1,7 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import GetMovieLists from '../../Services/getMovieLists'
+import Movie from '../Movie/Movie';
 
 class MovieDetails extends React.Component{
+  state = {
+    similarFilms: null
+  }
+
   componentDidMount = () => {
     if(!this.props.movieDetails){
       this.props.history.push('/');
@@ -10,6 +16,18 @@ class MovieDetails extends React.Component{
 
   returnHome = () => {
     this.props.history.push('/')
+  }
+
+  componentDidMount = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    
+    GetMovieLists.getSimilarFilms(this.props.movieDetails.id)
+      .then(res => {
+        this.setState({
+          similarFilms: res
+        })
+      }).catch(e => this.props.setError(e))
   }
 
   render(){
@@ -26,7 +44,14 @@ class MovieDetails extends React.Component{
             <h2>{this.props.movieDetails.title}</h2>
             <h3>Release Date: {new Date(this.props.movieDetails.release_date).toLocaleDateString()}</h3>
             <h4>Average Votes: {this.props.movieDetails.vote_average}/10</h4>
+            <h4>Original Title: {this.props.movieDetails.original_title}</h4>
             <p>{this.props.movieDetails.overview}</p>
+            Similar Movies:
+            <ul className='movies'>
+              {this.state.similarFilms && this.state.similarFilms.results.map((movie, index) => {
+                return <Movie key={index} data={movie} showDetails={this.props.showDetails}/>
+              })}
+            </ul>
           </div>
         }
       </section>
