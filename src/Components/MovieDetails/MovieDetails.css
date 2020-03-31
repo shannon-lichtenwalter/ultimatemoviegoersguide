@@ -1,0 +1,22 @@
+.detailedPage {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+  width: 100%;
+  
+}
+
+.detailedPage > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4%;
+
+}
+
+@media screen and (min-width: 600px) {
+  .detailedPage{
+    flex-direction: row;
+  }
+
+}
