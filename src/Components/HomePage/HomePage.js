@@ -4,26 +4,41 @@ import Movie from '../Movie/Movie';
 
 class HomePage extends React.Component{
   state = {
-    nowPlaying: true,
+    display: 'now_playing',
     data: null
   }
+
+  getList = (type) => {
+    GetMovieLists.getList(type)
+    .then((res) => {
+      this.setState({
+        data:res
+      })
+    })
+    .catch(e => this.props.setError(e));
+  }
+
+  updateMovieList = (e) => {
+    this.setState({
+      display:e.target.value
+    }, () => this.getList(this.state.display))
+  }
+
   componentDidMount = () => {
     if(this.props.error){
       this.props.resetError()
     }
-    
-    GetMovieLists.nowPlaying()
-      .then((res) => {
-        this.setState({
-          data:res
-        })
-      })
-      .catch(e => this.props.setError(e));
+
+    this.getList(this.state.display)
   }
   render(){
     return(
       <section>
-        {this.state.nowPlaying && <h2>Now Playing In Theatres</h2>}
+        <select onChange={(e)=>this.updateMovieList(e)}>
+          <option value='now_playing'>Now Playing</option>
+          <option value='popular'>Popular</option>
+          <option value='top_rated'>Top Rated</option>
+        </select>
         {this.state.data && this.state.data.results.map((movie, index) => {
           return <Movie key={index} data={movie}/>
         })}
