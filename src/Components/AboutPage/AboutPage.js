@@ -2,6 +2,12 @@ import React from 'react';
 import './AboutPage.css';
 
 class AboutPage extends React.Component{
+  componentDidMount = () => {
+    if(this.props.error){
+      this.props.resetError()
+    }
+  }
+  
   render(){
     return(
       <section>

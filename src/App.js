@@ -1,15 +1,29 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import Nav from './Components/Nav/Nav';
 import HomePage from './Components/HomePage/HomePage';
 import SearchPage from './Components/SearchPage/SearchPage';
 import AboutPage from './Components/AboutPage/AboutPage';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
-import config from './config';
 
 class App extends React.Component {
+  state = {
+    error: null
+  }
+
+  setError = (e) => {
+    this.setState({
+      error: e
+    })
+    this.props.history.push('/error')
+  }
+
+  resetError = () => {
+    this.setState({
+      error: null
+    })
+  }
   render() {
-    console.log(config);
     return (
       <main className='App'>
         <Nav />
@@ -20,19 +34,29 @@ class App extends React.Component {
           <Route
             exact
             path={'/'}
-            component={HomePage}
+            component={() => <HomePage
+              error={this.state.error}
+              setError={this.setError}
+              resetError={this.resetError}
+            />}
           />
 
           <Route
             exact
             path={'/search'}
-            component={SearchPage}
+            component={() => <SearchPage
+              error={this.state.error}
+              resetError={this.resetError}
+              />}
           />
 
           <Route
             exact
             path={'/about'}
-            component={AboutPage}
+            component={() => <AboutPage
+              error={this.state.error}
+              resetError={this.resetError}
+              />}
           />
 
           <Route
@@ -47,4 +71,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withRouter(App);
