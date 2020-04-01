@@ -44,6 +44,7 @@ class MovieDetails extends React.Component {
   render() {
     return (
       <section>
+        {!this.state.movieData && <h3>Loading...</h3>}
         {this.state.movieData && <div>
           <div className='detailedPage'>
             <div>
@@ -64,6 +65,8 @@ class MovieDetails extends React.Component {
           </div>
           Similar Movies:
             <ul className='movies'>
+            {!this.state.similarFilms && <li>...searching</li>}
+            {this.state.similarFilms && this.state.similarFilms.results.length === 0 && <li>No Similar Films Found In Database...</li>}
             {this.state.similarFilms && this.state.similarFilms.results.map((movie, index) => {
               return <Movie key={index} data={movie} showDetails={this.props.showDetails} />
             })}

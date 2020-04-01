@@ -12,7 +12,7 @@
   border-radius: 5px;
 }
 
-.poster:hover, .posterImage:hover {
+.movieButton > .poster:hover, .movieButton > .posterImage:hover {
   opacity: 0.6;
   
 }
@@ -20,3 +20,12 @@
 .movieListItem:hover {
   background-color: rgb(237, 235, 231, 0.6);
 }
+
+
+.movieButton {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  padding: 0px;
+}
+
