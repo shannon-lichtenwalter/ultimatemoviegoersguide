@@ -1,22 +1,114 @@
 .detailedPage {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: auto 0;
   width: 100%;
   
 }
 
 .detailedPage > div {
+  width: 80%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 4%;
+}
+
+.image-holder {
+  align-items:center;
+}
+
+.the-details-page{
+  display:flex;
+  flex-direction: column;
+}
+
+.back-button {
+  margin: 10px auto;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  font-size: 1.3rem; 
+  background-color: transparent;
+}
+
+.back-button:hover {
+  background-color: rgb(231, 231, 227, 0.4);
+}
+
+.allMovieDetails > h2 {
+  font-size: 1.5rem;
+  text-align:center;
+}
+
+h3 {
+  padding: 3% 0;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.category {
+  font-weight: bold;
+}
+
+.allMovieDetails > p {
+  padding: 5px 0;
+}
+
+.overview {
+  width: 90%;
+}
+.allMovieDetails > p, .allMovieDetails > h2, .allMovieDetails > h3 {
+  margin: 0;
+}
+
+.allMovieDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+}
+
+.allMovieDetails > p {
+  text-align: left;
+}
+
+.similarFilms {
+  text-align:center;
+  margin-top: 50px;
+}
+
+.posterImage, .poster {
+  -o-box-shadow:      12px 12px 29px #555;
+  -icab-box-shadow:   12px 12px 29px #555;
+  -khtml-box-shadow:  12px 12px 29px #555;
+  -moz-box-shadow:    12px 12px 29px #555;
+  -webkit-box-shadow: 12px 12px 29px #555;
+  box-shadow:         12px 12px 29px #555;
+}
+
+@media screen and (min-width: 680px) {
+  .allMovieDetails > h2 {
+    text-align:left;
+  }
+
+  .detailedPage{
+    flex-direction: row;
+    justify-content: center;
+  }
+  .detailedPage > .image-holder {
+    align-items: flex-end;
+    width: 50%;
+  }
+
+  .detailedPage > .allMovieDetails {
+    align-items: flex-start;
+    width: 50%;
+  }
 
 }
 
-@media screen and (min-width: 600px) {
-  .detailedPage{
-    flex-direction: row;
+@media screen and (min-width: 900px) {
+  .overview {
+    width: 60%;
   }
-
 }

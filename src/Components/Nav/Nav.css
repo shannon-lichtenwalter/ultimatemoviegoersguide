@@ -11,6 +11,12 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 10;
+    -o-box-shadow:      12px 12px 20px #555;
+    -icab-box-shadow:   12px 12px 20px #555;
+    -khtml-box-shadow:  12px 12px 20px #555;
+    -moz-box-shadow:    12px 12px 20px #555;
+    -webkit-box-shadow: 12px 12px 20px #555;
+    box-shadow:         12px 12px 20px #555;
 }
 
 nav > button {

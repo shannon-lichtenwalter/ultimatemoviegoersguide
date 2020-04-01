@@ -2,4 +2,21 @@
   display: block;
   font-size: 1.4rem;
   margin: 10px 0;
+  font-style: italic;
+}
+
+.about-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+@media screen and (min-width: 680px) {
+  .about-info {
+    width: 60%;
+  }
 }
