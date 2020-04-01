@@ -1,6 +1,7 @@
 import React from 'react';
 import GetMovieLists from '../../Services/getMovieLists';
 import Movie from '../Movie/Movie';
+import './SearchPage.css';
 
 class SearchPage extends React.Component {
   state = {
@@ -11,13 +12,12 @@ class SearchPage extends React.Component {
   handleSearch = (e) => {
     this.setState({ 
       searchField: e.target.value 
-    }, this.searchMovies())
+    }, this.searchMovies(e.target.value))
   }
 
-  searchMovies = () => {
-    console.log(this.state.searchField)
-    if (this.state.searchField) {
-      GetMovieLists.searchFilms(this.state.searchField)
+  searchMovies = (search) => {
+    if (search) {
+      GetMovieLists.searchFilms(search)
       .then((res) => {
         this.setState({
           data:res
@@ -38,7 +38,7 @@ class SearchPage extends React.Component {
       <section>
         <form onSubmit={(e)=>e.preventDefault()}>
           <fieldset>
-            <label htmlFor='search'>Search For A Movie</label>
+            <label htmlFor='search'>Search For A Movie:</label>
             <input type='text' id='search' name='search' onChange={(e) => this.handleSearch(e)}></input>
           </fieldset>
         </form>

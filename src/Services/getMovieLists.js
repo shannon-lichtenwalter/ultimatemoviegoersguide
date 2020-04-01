@@ -28,6 +28,20 @@ const GetMovieLists = {
           : res.json()
   )
   },
+
+  getMovie(id){
+    return fetch(`${config.API_ENDPOINT}movie/${id}?api_key=${config.API_KEY}&language=en-US`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+      },
+    })
+      .then(res => 
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+  )
+  },
   
   getSimilarFilms(id){
     return fetch(`${config.API_ENDPOINT}movie/${id}/similar?api_key=${config.API_KEY}&language=en-US`, {

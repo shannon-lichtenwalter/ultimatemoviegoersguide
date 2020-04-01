@@ -11,7 +11,6 @@ import './index.css';
 class App extends React.Component {
   state = {
     error: null,
-    movieDetails: null
   }
 
   setError = (e) => {
@@ -27,10 +26,8 @@ class App extends React.Component {
     })
   }
 
-  showDetails = (data) => {
-    this.setState({
-      movieDetails: data
-    }, this.props.history.push('/movie-details'))
+  showDetails = (id) => {
+    this.props.history.push(`/movie-details/${id}`)
   }
 
 
@@ -74,9 +71,8 @@ class App extends React.Component {
 
           <Route
             exact
-            path={'/movie-details'}
+            path={'/movie-details/:id'}
             component={() => <MovieDetails
-              movieDetails= {this.state.movieDetails}
               error={this.state.error}
               setError={this.setError}
               showDetails={this.showDetails}

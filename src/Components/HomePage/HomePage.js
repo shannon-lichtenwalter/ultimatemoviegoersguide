@@ -35,11 +35,13 @@ class HomePage extends React.Component{
   render(){
     return(
       <section>
-        <select onChange={(e)=>this.updateMovieList(e)}>
-          <option value='now_playing'>Now Playing</option>
-          <option value='popular'>Popular</option>
-          <option value='top_rated'>Top Rated</option>
-        </select>
+        <form>
+          <select onChange={(e)=>this.updateMovieList(e)}>
+            <option value='now_playing'>Now Playing</option>
+            <option value='popular'>Popular</option>
+            <option value='top_rated'>Top Rated</option>
+          </select>
+        </form>
         <ul className='movies'>
           {this.state.data && this.state.data.results.map((movie, index) => {
             return <Movie key={index} data={movie} showDetails={this.props.showDetails}/>

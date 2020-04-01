@@ -4,7 +4,7 @@ import './Movie.css';
 
 class Movie extends React.Component{
   renderMovieDetails = () => {
-    this.props.showDetails(this.props.data)
+    this.props.showDetails(this.props.data.id)
   }
 
   render(){
