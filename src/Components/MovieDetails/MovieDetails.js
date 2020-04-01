@@ -13,7 +13,19 @@ class MovieDetails extends React.Component {
   listGenres = (array) => {
     let string = '';
     for (let i = 0; i < array.length; i++) {
-      if (i === array.length - 1) {
+      if(array.length === 1){
+        string += array[i].name
+      }
+
+      else if (array.length === 2){
+        if(i=== 0){
+          string += array[i].name
+        } else {
+          string += ' & ' + array[i].name
+        }
+      }
+
+      else if (i === array.length - 1) {
         string += '& ' + array[i].name
       } else {
         string += array[i].name + ', '
