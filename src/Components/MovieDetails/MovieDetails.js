@@ -10,6 +10,33 @@ class MovieDetails extends React.Component {
     similarFilms: null
   }
 
+  naughtyWordEraser = (string) => {
+    const naughtyWordBank = ['fuck', 'fucking', 'shit', 'damn', 'damnit', 'ass'];
+    let array= string.split(' ');
+    let badWord=false;
+
+    let cleanArray = array.map(word => {
+      if(naughtyWordBank.includes(word.toLowerCase())){
+        badWord=true;
+        let filteredWord = word[0];
+        for(let i=1; i<word.length; i++){
+          filteredWord += '*';
+        }
+        return filteredWord;
+      } else {
+        return word
+      }
+    })
+    
+    if(!badWord){
+      return string;
+    }
+
+    let newString= '';
+    cleanArray.map(word => newString += `${word} `);
+    return newString;
+  }
+
   listGenres = (array) => {
     let string = '';
     for (let i = 0; i < array.length; i++) {
@@ -67,7 +94,7 @@ class MovieDetails extends React.Component {
             </div>
             <div className='allMovieDetails'>
               <h2>{this.state.movieData.title}</h2>
-              <h3>{this.state.movieData.tagline}</h3>
+              <h3>{this.naughtyWordEraser(this.state.movieData.tagline)}</h3>
               <p><span className='category'>Release Date:</span> {new Date(this.state.movieData.release_date).toLocaleDateString()}</p>
               <p><span className='category'>Genres:</span> {this.listGenres(this.state.movieData.genres)}</p>
               <p><span className='category'>Average Votes:</span> {this.state.movieData.vote_average}/10</p>
