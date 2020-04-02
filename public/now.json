@@ -1,7 +1,6 @@
 {
   "version": 2,
   "name": "ultimatemoviegoersguide",
-  "alias": "ultimatemoviegoersguide",
   "routes": [
     {
       "handle": "filesystem"
