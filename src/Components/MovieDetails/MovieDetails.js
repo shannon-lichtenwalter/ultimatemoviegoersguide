@@ -56,7 +56,7 @@ class MovieDetails extends React.Component {
   render() {
     return (
       <section>
-        {!this.state.movieData && <h3>Loading...</h3>}
+        {!this.state.movieData && <h3 className='loading'>Loading...</h3>}
         {this.state.movieData && <div className='the-details-page'>
           <div className='detailedPage'>
             <div className='image-holder'>

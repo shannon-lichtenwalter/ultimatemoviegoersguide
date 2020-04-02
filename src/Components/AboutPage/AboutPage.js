@@ -11,7 +11,6 @@ class AboutPage extends React.Component{
   render(){
     return(
       <section className='about-info'>
-        <h2>About Us...</h2>
         <p>
           Hi There,
         </p>

@@ -12,6 +12,7 @@ fieldset {
   background-color: rgb(231, 231, 227, 0.4);
   border: none;
   border-radius: 5px;
+  margin-bottom: 5%;
 }
 
 label {

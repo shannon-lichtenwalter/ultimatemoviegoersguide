@@ -36,7 +36,8 @@ class HomePage extends React.Component{
     return(
       <section>
         <form>
-          <select onChange={(e)=>this.updateMovieList(e)}>
+          <label htmlFor='listSelect' hidden>Displaying:</label>
+          <select id='listSelect' onChange={(e)=>this.updateMovieList(e)}>
             <option value='now_playing'>Now Playing</option>
             <option value='popular'>Popular</option>
             <option value='top_rated'>Top Rated</option>
