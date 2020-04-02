@@ -8,53 +8,53 @@ const GetMovieLists = {
         'content-type': 'application/json',
       },
     })
-      .then(res => 
+      .then(res =>
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
-  )
+      )
   },
 
-  searchFilms(name){
+  searchFilms(name) {
     return fetch(`${config.API_ENDPOINT}search/movie?api_key=${config.API_KEY}&query=${name}&language=en-US&include_adult=false`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
       },
     })
-      .then(res => 
+      .then(res =>
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
-  )
+      )
   },
 
-  getMovie(id){
-    return fetch(`${config.API_ENDPOINT}movie/${id}?api_key=${config.API_KEY}&language=en-US`, {
+  getMovie(id) {
+    return fetch(`${config.API_ENDPOINT}movie/${id}?api_key=${config.API_KEY}`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
       },
     })
-      .then(res => 
+      .then(res =>
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
-  )
+      )
   },
-  
-  getSimilarFilms(id){
+
+  getSimilarFilms(id) {
     return fetch(`${config.API_ENDPOINT}movie/${id}/similar?api_key=${config.API_KEY}&language=en-US`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
       },
     })
-      .then(res => 
+      .then(res =>
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
-  )
+      )
   },
 };
 

@@ -66,7 +66,8 @@ class MovieDetails extends React.Component {
     document.documentElement.scrollTop = 0;
 
     GetMovieLists.getMovie(this.props.match.params.id)
-      .then((res) => {
+      .then((res) => { 
+        console.log(res)
         this.setState({
           movieData: res
         })

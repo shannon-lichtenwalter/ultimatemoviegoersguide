@@ -15,7 +15,7 @@ class AboutPage extends React.Component{
           Hi There,
         </p>
         <p>
-          Welome to the Ultimate Moviegoers Guide. We hope that you find just the movie you are looking for!
+          Welcome to the Ultimate Moviegoers Guide. We hope that you find just the movie you are looking for!
           Use our interactive application to search for your favorite movies! Happy Movie Watching!
         </p>
         <p>
