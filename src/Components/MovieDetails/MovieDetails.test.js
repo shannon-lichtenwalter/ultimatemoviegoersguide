@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import App from './App';
+import MovieDetails from './MovieDetails';
 
-describe('App Component', () => {
+describe('MovieDetails Component', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render
-      (<BrowserRouter><App /></BrowserRouter>, div);
+      (<BrowserRouter><MovieDetails /></BrowserRouter>, div);
     ReactDOM.unmountComponentAtNode(div);
   }); 
 });

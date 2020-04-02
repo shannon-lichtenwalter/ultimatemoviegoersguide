@@ -25,5 +25,5 @@ To obtain your own API Key:
 
 Once you are logged in you can go to _settings_ -> [_api_](https://www.themoviedb.org/settings/api) and create an api application.
 
-Lastly run npm test to see the smoke and unit tests for components.
+Lastly run npm test to see the smoke tests for the components.
 
