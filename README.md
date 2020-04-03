@@ -7,9 +7,9 @@ Github Repo: https://github.com/shannon-lichtenwalter/ultimatemoviegoersguide
 
 ### Summary
 
-Welcome to the Ultimate Moviegoers Guide! This interactive application interacts with 'The Movie Database' API. The app allows users to see a list of movies where the user can sort by Now Playing, Popular, and Top Rates. Additionally, users can search for a movie and can select a movie to see more details.
+Welcome to the Ultimate Moviegoers Guide! This interactive application utilizes 'The Movie Database' API. The app allows users to see a list of movies where the user can sort by Now Playing, Popular, and Top Rated. Additionally, users can search for a movie and can select a movie to see more details.
 
-This application utilizes a clean and minimalistic design with extra white-space on the page to allow the user to focus their attention to the important fields on the page. It was built using a mobile-first design approach and is responsive from 320px to 1600px.
+This application was built with a clean and minimalistic design that includes extra white-space on the page to allow the user to focus their attention to the important fields on the page. It was created using a mobile-first design approach and is responsive from 320px to 1600px.
 
 
 #### Instructions
