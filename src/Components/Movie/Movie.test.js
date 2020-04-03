@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { mount } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import Movie from './Movie';
 
 describe('Movie Component', () => {
@@ -15,4 +17,9 @@ describe('Movie Component', () => {
       (<Movie data={testData}/>, div);
     ReactDOM.unmountComponentAtNode(div);
   }); 
+
+  it('Displays the Movie component correctly when rendered', () => {
+    const wrapper = mount(<Movie data={testData}/>);
+    expect(toJson(wrapper)).toMatchSnapshot()
+  });
 });

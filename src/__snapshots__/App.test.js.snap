@@ -1,0 +1,240 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component Displays the App component correctly when rendered 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <withRouter(App)>
+      <App
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "createHref": [Function],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+        location={
+          Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          }
+        }
+        match={
+          Object {
+            "isExact": true,
+            "params": Object {},
+            "path": "/",
+            "url": "/",
+          }
+        }
+      >
+        <main
+          className="App"
+        >
+          <withRouter(Nav)>
+            <Nav
+              history={
+                Object {
+                  "action": "POP",
+                  "block": [Function],
+                  "createHref": [Function],
+                  "go": [Function],
+                  "goBack": [Function],
+                  "goForward": [Function],
+                  "length": 1,
+                  "listen": [Function],
+                  "location": Object {
+                    "hash": "",
+                    "pathname": "/",
+                    "search": "",
+                    "state": undefined,
+                  },
+                  "push": [Function],
+                  "replace": [Function],
+                }
+              }
+              location={
+                Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                }
+              }
+              match={
+                Object {
+                  "isExact": true,
+                  "params": Object {},
+                  "path": "/",
+                  "url": "/",
+                }
+              }
+            >
+              <nav>
+                <button
+                  onClick={[Function]}
+                >
+                  Home
+                </button>
+                <button
+                  onClick={[Function]}
+                >
+                  Search
+                </button>
+                <button
+                  onClick={[Function]}
+                >
+                  About
+                </button>
+              </nav>
+            </Nav>
+          </withRouter(Nav)>
+          <header>
+            <h1>
+              Ultimate Moviegoers Guide
+            </h1>
+          </header>
+          <Switch>
+            <Route
+              component={[Function]}
+              computedMatch={
+                Object {
+                  "isExact": true,
+                  "params": Object {},
+                  "path": "/",
+                  "url": "/",
+                }
+              }
+              exact={true}
+              location={
+                Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                }
+              }
+              path="/"
+            >
+              <component
+                history={
+                  Object {
+                    "action": "POP",
+                    "block": [Function],
+                    "createHref": [Function],
+                    "go": [Function],
+                    "goBack": [Function],
+                    "goForward": [Function],
+                    "length": 1,
+                    "listen": [Function],
+                    "location": Object {
+                      "hash": "",
+                      "pathname": "/",
+                      "search": "",
+                      "state": undefined,
+                    },
+                    "push": [Function],
+                    "replace": [Function],
+                  }
+                }
+                location={
+                  Object {
+                    "hash": "",
+                    "pathname": "/",
+                    "search": "",
+                    "state": undefined,
+                  }
+                }
+                match={
+                  Object {
+                    "isExact": true,
+                    "params": Object {},
+                    "path": "/",
+                    "url": "/",
+                  }
+                }
+              >
+                <HomePage
+                  error={null}
+                  resetError={[Function]}
+                  setError={[Function]}
+                  showDetails={[Function]}
+                >
+                  <section>
+                    <form>
+                      <label
+                        hidden={true}
+                        htmlFor="listSelect"
+                      >
+                        Displaying:
+                      </label>
+                      <select
+                        id="listSelect"
+                        onChange={[Function]}
+                      >
+                        <option
+                          value="now_playing"
+                        >
+                          Now Playing
+                        </option>
+                        <option
+                          value="popular"
+                        >
+                          Popular
+                        </option>
+                        <option
+                          value="top_rated"
+                        >
+                          Top Rated
+                        </option>
+                      </select>
+                    </form>
+                    <ul
+                      className="movies"
+                    />
+                  </section>
+                </HomePage>
+              </component>
+            </Route>
+          </Switch>
+        </main>
+      </App>
+    </withRouter(App)>
+  </Router>
+</BrowserRouter>
+`;

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorPage Component Displays the ErrorPage correctly when rendered 1`] = `
+<ErrorPage>
+  <section>
+    <h2>
+       Oops! Something has gone wrong! Please return to the home page and try again...
+    </h2>
+  </section>
+</ErrorPage>
+`;

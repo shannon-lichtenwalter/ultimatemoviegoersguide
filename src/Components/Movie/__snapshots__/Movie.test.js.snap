@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie Component Displays the Movie component correctly when rendered 1`] = `
+<Movie
+  data={
+    Object {
+      "id": "123",
+      "poster_path": "/test",
+      "title": "test",
+    }
+  }
+>
+  <li
+    className="movieListItem"
+  >
+    <button
+      className="movieButton"
+      onClick={[Function]}
+    >
+      <img
+        alt="movie poster"
+        className="posterImage"
+        src="https://image.tmdb.org/t/p/w200//test"
+      />
+      <h1>
+        test
+      </h1>
+    </button>
+  </li>
+</Movie>
+`;

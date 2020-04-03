@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutPage Component Displays the AboutPage when rendered 1`] = `
+<AboutPage>
+  <section
+    className="about-info"
+  >
+    <p>
+      Hi There,
+    </p>
+    <p>
+      Welcome to the Ultimate Moviegoers Guide. We hope that you find just the movie you are looking for! Use our interactive application to search for your favorite movies! Happy Movie Watching!
+    </p>
+    <p>
+      Sincerely, 
+      <span
+        className="signature"
+      >
+        The Ultimate Moviegoers Guide Team
+      </span>
+    </p>
+  </section>
+</AboutPage>
+`;

@@ -10,6 +10,13 @@ class MovieDetails extends React.Component {
     similarFilms: null
   }
 
+  /* this method was written when The Movie DataBase was having
+  issues with user attacks in their system. As a result, some of the 
+  object being returned from the API service included movie taglines
+  that had inappropriate words in them. The user attacks seem to have 
+  been resolved as of 4/3/2020 but I left this method in place in case 
+  of repeat issues. */
+  
   naughtyWordEraser = (string) => {
     const naughtyWordBank = ['fuck', 'fucking', 'shit', 'damn', 'damnit', 'ass'];
     let array= string.split(' ');
@@ -67,7 +74,6 @@ class MovieDetails extends React.Component {
 
     GetMovieLists.getMovie(this.props.match.params.id)
       .then((res) => { 
-        console.log(res)
         this.setState({
           movieData: res
         })
